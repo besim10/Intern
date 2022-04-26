@@ -1,0 +1,27 @@
+.title{
+    color: white;
+}
+.login-form{
+    color: white;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+}
+.login-form input{
+    padding: 0.4rem;
+    margin-left: 0.5rem;
+}
+.login-form .submit-btn{
+    all: unset;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.login-form .submit-btn:hover{
+    color: rgb(47, 49, 56);
+    background-color: white;
+}
+.dont-have-account{
+    color: white;
+    cursor: pointer;
+}

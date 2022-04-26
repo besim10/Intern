@@ -1,11 +1,12 @@
-
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { invalidateNavigate } from '../main/store/stores/navigation/navigation.store';
 import {RootState} from '../main/store/redux/rootState'
+
 const AppNavigate = () => {
   const redirectPath = useSelector((state: RootState) => state.navigation);
+  console.log(redirectPath)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   useEffect(() => {
