@@ -1,29 +1,13 @@
 
 import { FC } from "react"
+import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import './style.css'
+import onLogin from "../../main/store/stores/user/login.store.on-login"
 const Login : FC = ()=>{
-
+    
     const navigate = useNavigate()
-
-    const sendInfoToServer = (data: any) =>{
-        console.log(data)
-        fetch(`http://reimusabelli-001-site1.itempurl.com/api/authentication/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-      .then((resp) => resp.json())
-      .then((data) => {
-        if (data.Message) {
-          alert(data.Message);
-        } else {
-          localStorage.setItem('token', data.token)
-        }
-      });
-    }
+    const dispatch = useDispatch()
     
     const handleSubmit = (e: any) =>{
         e.preventDefault()
@@ -33,18 +17,18 @@ const Login : FC = ()=>{
             userName,
             password
         }
-        sendInfoToServer(data)
+        dispatch(onLogin(data))
     }
     
     const handleClick = () =>{
-        navigate('/register')
+        navigate('/register', {replace: true})
     }
 
     return(
         <main className="main-wrapper">
             <div className="main-container">
                 <h1 className="title">Login</h1>
-                <form onSubmit={handleSubmit} className="login-form">
+                <form onSubmit={handleSubmit} className="form login-form">
                     <label>
                         Username:
                         <input type="text" name="username" required/>
@@ -55,7 +39,7 @@ const Login : FC = ()=>{
                     </label>
                     <input type="submit" value="Login" className="submit-btn" />
                 </form>
-                <p onClick= {handleClick} className="dont-have-account">Don't have an account? Register Now!</p>
+                <p onClick= {handleClick} className="form-info">Don't have an account? Register Now!</p>
             </div>
         </main>
     )

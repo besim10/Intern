@@ -1,0 +1,9 @@
+img{
+    width: 100%;
+}
+.product-list {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    list-style-type: none;
+    gap: 1rem;
+}

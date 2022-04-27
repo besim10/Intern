@@ -1,0 +1,16 @@
+.product-item{
+    cursor: pointer;
+}
+.product-item img{
+    border-radius: 0.3rem; 
+}
+.product-item__description{
+    display: grid;
+    grid-auto-flow: column;
+    font-weight: bold;
+    padding: 0rem 1rem;
+    place-content: space-between;
+}
+.product-item__price{
+    color: #5b7caf;
+}

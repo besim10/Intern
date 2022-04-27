@@ -8,9 +8,12 @@ const userStore = createSlice({
     setUser(_state, action: PayloadAction<IUser>) {
       return {...action.payload, password:''};
     },
+    invalidateUser(){
+      return null
+    }
   },
 });
 
 export default userStore;
 
-export const { setUser } = userStore.actions;
+export const { setUser, invalidateUser } = userStore.actions;

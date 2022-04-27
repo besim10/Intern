@@ -7,14 +7,13 @@
 }
 .main-wrapper{
     display: grid;
-    background-color: rgb(188, 189, 189);
+    background-color: whitesmoke;
     height: 100vh;
-    place-items: center;
+    place-content: center;
 }
 .main-container{
-    background-color: rgb(47, 49, 56);
+    background-color: #584B53;
     width: 400px;
-    height: 300px;
     display: grid;
     place-items: center;
     padding: 1rem;

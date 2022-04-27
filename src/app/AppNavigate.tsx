@@ -6,7 +6,7 @@ import {RootState} from '../main/store/redux/rootState'
 
 const AppNavigate = () => {
   const redirectPath = useSelector((state: RootState) => state.navigation);
-  console.log(redirectPath)
+  
   const navigate = useNavigate()
   const dispatch = useDispatch()
   useEffect(() => {

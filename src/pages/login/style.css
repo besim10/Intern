@@ -1,27 +1,38 @@
 .title{
-    color: white;
+    color: whitesmoke;
 }
-.login-form{
-    color: white;
+.form{
+    color: whitesmoke;
     display: grid;
-    place-items: center;
     gap: 1rem;
 }
-.login-form input{
+.form input{
     padding: 0.4rem;
-    margin-left: 0.5rem;
 }
-.login-form .submit-btn{
+.form label{
+    display: grid;
+    place-items: start;
+    gap: 0.4rem;
+}
+.form .submit-btn{
     all: unset;
     border: 1px solid white;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    display: grid;
+    place-self: center;
 }
-.login-form .submit-btn:hover{
-    color: rgb(47, 49, 56);
+.form .submit-btn:hover{
+    color: #584B53;
     background-color: white;
 }
-.dont-have-account{
+.form-info{
     color: white;
     cursor: pointer;
+}
+.form-info:hover{
+    text-decoration: underline;
+}
+.form .date{
+   width: -webkit-fill-available;
 }

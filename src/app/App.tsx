@@ -1,32 +1,19 @@
 import AppNavigate from "./AppNavigate";
 import PrivateRoute from "./private-route";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "../pages/login";
 import Register from "../pages/register";
+import Profile from "../pages/profile";
 import DashboardPage from "../pages/dashboard";
 import "./app.css";
-import { useEffect } from "react";
 const App = () => {
-  useEffect(() => {
-    if (localStorage.token) {
-      fetch(
-        `http://reimusabelli-001-site1.itempurl.com/api/authentication/validate-token?token=${localStorage.token}`
-      )
-        .then((resp) => resp.json())
-        .then((data) => {
-          if (data.error) console.log(data.error);
-          else {
-            console.log(data);
-          }
-        });
-    }
-  }, []);
   return (
     <BrowserRouter>
       <AppNavigate />
       <Routes>
+        <Route index element={<Navigate to="/login" />} />
         <Route
-          path="/"
+          path="/dashboard"
           element={
             <PrivateRoute>
               <DashboardPage />
@@ -44,8 +31,16 @@ const App = () => {
         <Route
           path="/register"
           element={
-            <PrivateRoute>
+            <PrivateRoute isPageLogin>
               <Register />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute isPageLogin>
+              <Profile />
             </PrivateRoute>
           }
         />

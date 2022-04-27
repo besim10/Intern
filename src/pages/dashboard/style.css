@@ -1,0 +1,10 @@
+.dashboard-main{
+    display: grid;
+    background-color: #584B53;
+}
+.dashboard-container{
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    background-color: whitesmoke;
+}
