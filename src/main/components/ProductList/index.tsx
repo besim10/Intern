@@ -9,11 +9,16 @@ const ProductList = () => {
   );
 
   return (
-    <ul className="product-list">
-      {products.map((product, index) => (
-        <ProductItem product={product} />
-      ))}
-    </ul>
+    <main className="default-main">
+      <div className="default-container">
+        <h3>All products</h3>
+        <ul className="product-list">
+          {products.map((product, index) => (
+            <ProductItem product={product} key={index} />
+          ))}
+        </ul>
+      </div>
+    </main>
   );
 };
 export default ProductList;

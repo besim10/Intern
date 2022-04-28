@@ -6,7 +6,6 @@ header{
     padding: 1rem;
     align-items: center;
 }
-   
 .right-side{
     display: grid;
     place-items: end;
@@ -30,5 +29,25 @@ header{
     all: unset;
     background-color: #9D5C63;
     padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.official-logo{
+    cursor: pointer;
+}
+.cart-btn-container{
+    position: relative;
+}
+.products-on-card{
+    position: absolute;
+    font-weight: bold;
+    background-color: #D6E3F8;
+    color: #9D5C63;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-content: center;
+    border-radius: 1rem;
+    right: 8px;
+    top: 3px;
     cursor: pointer;
 }

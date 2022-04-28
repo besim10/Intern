@@ -1,6 +1,6 @@
 interface IProduct {
 
-    id?: number;
+  id?: number;
   name: string;
   shortDescription: string;
   longDescription: string;

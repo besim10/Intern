@@ -1,5 +1,10 @@
 .product-item{
     cursor: pointer;
+    color: inherit;
+}
+.product-item a{
+    color: unset;
+    text-decoration: none;
 }
 .product-item img{
     border-radius: 0.3rem; 
@@ -9,6 +14,7 @@
     grid-auto-flow: column;
     font-weight: bold;
     padding: 0rem 1rem;
+    gap: 0.5rem;
     place-content: space-between;
 }
 .product-item__price{
