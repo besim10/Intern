@@ -32,7 +32,9 @@ const Cart = () => {
   const handleClick = () => {
     navigate("/dashboard");
   };
-
+  const handleCheckOutBtn = () => {
+    navigate("/shipping");
+  };
   return (
     <main className="default-main">
       <div className="default-container">
@@ -93,7 +95,7 @@ const Cart = () => {
               <h4>
                 Cart Total <span>£{cart.totalValue.toFixed(2)}</span>
               </h4>
-              <button className="checkout-btn">
+              <button className="checkout-btn" onClick={handleCheckOutBtn}>
                 <p>
                   <img src={bagIcon} alt="checkout-btn" />
                   <span>Checkout</span>

@@ -12,11 +12,11 @@ const initStore = async (currentUser:IUser) => {
   });
 
   const products:IProduct[] = await (await axios.get('product/get-all?PageNumber=1&PageSize=20')).data.data;
-
   appStore.dispatch(setProducts(products))
 
-  if(currentUser)
-      appStore.dispatch(setUser(currentUser));
+  if(currentUser){
+    appStore.dispatch(setUser(currentUser));
+  }
   return appStore;
 };
 

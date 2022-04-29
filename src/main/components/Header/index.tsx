@@ -6,6 +6,7 @@ import "./style.css";
 import logo from "../../../assets/images/logo.svg";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../../store/redux/rootState";
+import AccountMenu from "../ProfileIcon/index";
 const Header = () => {
   const currentUser = useGetUser();
 
@@ -43,9 +44,7 @@ const Header = () => {
               <h3>Welcome, {currentUser.firstName}!</h3>
             </li>
             <li>
-              <button onClick={handleClick} className="log-out-btn">
-                Log out
-              </button>
+              <AccountMenu />
             </li>
             <li onClick={handleCartButton} className="cart-btn-container">
               <span onClick={handleCartButton} className="products-on-card">

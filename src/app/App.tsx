@@ -6,6 +6,8 @@ import Register from "../pages/register";
 import ProductDetail from "../pages/product-detail";
 import DashboardPage from "../pages/dashboard";
 import "./app.css";
+import Shipping from "../pages/shipping";
+import Payment from "../pages/payment";
 import Header from "../main/components/Header";
 import Cart from "../pages/cart";
 const App = () => {
@@ -41,6 +43,22 @@ const App = () => {
           element={
             <PrivateRoute isPageLogin>
               <Register />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/shipping"
+          element={
+            <PrivateRoute>
+              <Shipping />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/payment"
+          element={
+            <PrivateRoute>
+              <Payment />
             </PrivateRoute>
           }
         />

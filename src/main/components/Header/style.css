@@ -10,14 +10,6 @@ header{
     display: grid;
     place-items: end;
 }
-.log-out-btn{
-    all: unset;
-    border: 1px solid #9D5C63;
-    padding: 0.5rem 1rem;
-    color: #9D5C63;
-    font-weight: bold;
-    cursor: pointer;
-}
 .right-side__list{
     list-style-type: none;
     display: grid;

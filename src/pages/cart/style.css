@@ -44,15 +44,7 @@
     grid-auto-flow: column;
     place-content: space-between;
 }
-.checkout-btn{
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    color: #d6e3f8;
-    background-color: #9D5C63;
-}
+
 .checkout-btn p{
     display: grid;
     grid-auto-flow: column;
@@ -65,7 +57,7 @@
 .no-items-container{
     display: grid;
     place-content: center;
-    height: 50vh;
+    height: 76vh;
     gap: 1rem;
 }
 .no-items-container .continue-shopping-btn{
