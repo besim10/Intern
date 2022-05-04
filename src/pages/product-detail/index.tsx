@@ -17,6 +17,9 @@ const ProductDetail = () => {
 
   useEffect(() => {
     getSingleProduct();
+    return () => {
+      setProduct(null);
+    };
   }, []);
   const getSingleProduct = async () => {
     const singleProduct: IProduct = await (
