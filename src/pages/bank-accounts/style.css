@@ -1,0 +1,26 @@
+.bankAccounts-wrapper{
+    display: grid;
+    align-content: start;
+    padding: 1rem;
+    height: 86.5vh;
+}
+.bankAccounts-main{
+    background-color: #D6E3F8;
+    width: unset;
+}
+.bankAccount-list__item a{
+    display: grid;
+    border: 1px solid #9d5c63;
+    border-radius: 5px;
+    padding: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    gap: 1rem;
+}
+.bankAccount-list__item a{
+    color: initial;
+    text-decoration: none;
+}  
+.balance{
+    padding: unset;
+}

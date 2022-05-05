@@ -1,4 +1,5 @@
 import "./style.css";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import xIcon from "../../assets/images/x.svg";
 import bagIcon from "../../assets/images/bag.svg";
 import IProduct from "../../main/interfaces/IProduct";
@@ -36,9 +37,12 @@ const Cart = () => {
     navigate("/shipping");
   };
   return (
-    <main className="default-main">
-      <div className="default-container">
-        <h3>Your Items</h3>
+    <main className="default-main cart-main">
+      <button className="go-back-btn" onClick={() => navigate(-1)}>
+        <ArrowBackIcon sx={{ fill: "#ffff", fontSize: "2rem" }} />
+      </button>
+      <div className="default-container cart-container">
+        <h3 className="your-items">Your Items</h3>
         {cart.products.length === 0 ? (
           <div className="no-items-container">
             <h3>Your Shopping Cart Is Empty</h3>
@@ -74,10 +78,18 @@ const Cart = () => {
                       <option value="7">7</option>
                       <option value="8">8</option>
                     </select>
+                    <span className="shipping-day-info">
+                      This item ships within one business day.
+                    </span>
                   </div>
                   <div className="cart-item__price">
-                    <h4>£{cartProduct.product.price * cartProduct.quantity}</h4>
-                    <span>each £{cartProduct.product.price}</span>
+                    <h4>
+                      £
+                      {(
+                        cartProduct.product.price * cartProduct.quantity
+                      ).toFixed(2)}
+                    </h4>
+                    <span>each £{cartProduct.product.price.toFixed(2)}</span>
                   </div>
                   <button
                     className="remove-btn"
@@ -93,7 +105,7 @@ const Cart = () => {
             <div className="cart-checkout">
               <h4>Cart</h4>
               <h4>
-                Cart Total <span>£{cart.totalValue.toFixed(2)}</span>
+                Cart Total: <span>£{cart.totalValue.toFixed(2)}</span>
               </h4>
               <button className="checkout-btn" onClick={handleCheckOutBtn}>
                 <p>

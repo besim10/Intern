@@ -111,7 +111,7 @@ export default function AccountMenu() {
         </MenuItem>
         <MenuItem
           onClick={() => {
-            navigate("/bank-account");
+            navigate("/bank-accounts");
           }}
         >
           <ListItemIcon>
@@ -121,7 +121,7 @@ export default function AccountMenu() {
         </MenuItem>
         <MenuItem
           onClick={() => {
-            navigate("/transactions");
+            navigate("/my-transactions");
           }}
         >
           <ListItemIcon>

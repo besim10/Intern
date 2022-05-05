@@ -10,14 +10,16 @@
     place-self: start;
     margin-top: 1rem;
 }
-.main-container.shipping-main {
-    background-color: unset;
-    width: unset;
+
+.default-main.shipping-wrapper{
+   height: 86.7vh;
+   display: grid;
+   align-content: start; 
 }
-.main-wrapper.shipping-wrapper{
-    align-content: start;
-    padding-top: 1rem;
-    height: 86vh;
+.default-container.shipping-main {
+    background-color: unset;
+    display: grid;
+    justify-content: center;
 }
 .shipping-form{
     display: grid;
@@ -48,7 +50,12 @@
     display: grid;
     grid-auto-flow: column;
     gap: 0.5rem;
-    place-items: center;
+    width: 50%;
+    place-content: center;
     place-self: start;
-    font-size: 1rem;
+    
+}
+.go-back-btn{
+    display: grid;
+    place-self: start;
 }

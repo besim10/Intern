@@ -2,7 +2,8 @@
     display: grid;
     place-self: start;
     width: 100%;
-    border-bottom: 1px solid #d6e3f8;
+    border-bottom: .0625rem solid #d5d5d5;
+
     padding-bottom: 1rem;
 }
 .payment-main h4{
@@ -10,12 +11,17 @@
     place-self: start;
     margin-top: 1rem;
 }
-.main-container.payment-main {
-    background-color: unset;
-    width: unset;
-    place-items: start;
+.default-container.payment-main {
+   display: grid;
+   place-content: center;
 }
-.main-wrapper.payment-wrapper{
+.completed-wrapper{
+    display: grid;
+    height: 86vh;
+    align-content: start;
+
+}
+.default-main.payment-wrapper{
     align-content: start;
     padding-top: 1rem;
     height: 86vh;
@@ -25,7 +31,7 @@
     grid-auto-flow: column;
     gap: 2rem;
     width: 100%;
-    place-content: space-beetwen;
+    justify-content: space-between;
 }
 .shipping-section p{
     width: 20ch;
@@ -34,37 +40,70 @@
     display: grid;
     gap: 1rem;
 }
+.shipping-days p{
+    padding: 0.3rem;
+    border-radius: 3px;
+    border: .0625rem solid #d5d5d5;
+}
 .payment-form{
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
 }
-.payment-form input{
-    padding: 0.65rem 0.8rem;
-    outline: none;
-    border: 2px solid rgb(194, 193, 193);
-    border-radius: 4px;
-   font-style: italic;
-   font-size: 0.9rem;
-   font-family: sans-serif;
-
-}
-.payment-form input:hover{
-    border: 2px solid #d6e3f8;
-}
-.payment-form input:focus{
-    border-color: #d6e3f8;
-}
-.column{
+.bankAccount-list{
+    list-style-type: none;
     display: grid;
-    grid-auto-flow: column;
-    gap: 1rem;
+    grid-template-columns: repeat( 4, minmax(150px, 1fr) );
+    gap: 2rem;
 }
-.checkout-btn.checkpout-btn-on-shipping{
+.bankAccount-list__item{
+    display: grid;
+    position: relative;
+    border: .0625rem solid #d5d5d5;
+    border-radius: 10px;
+}
+.label{
+    cursor: pointer;
+    padding: 2rem;
+    text-align: center;
+}
+.input{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+.balance{
+    color: #8ca1c3;
+    text-align: center;
+    cursor: pointer;
+}
+input[type='radio'] {
+    accent-color: #1f6928fe;
+}
+.error{
+    color: red;
+    border: 1px solid red;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.completed-main{
+    display: grid;
+    place-items: center;
+    align-content: center;
+    height: 79.5vh;
+}
+.disabled{
     display: grid;
     grid-auto-flow: column;
     gap: 0.5rem;
+    width: 50%;
+    background-color: #d5d5d57a;
+    border: none;
+    color: #b3b3b3;
     place-content: center;
     place-self: start;
-    font-size: 1rem;
-    width: 40%;
+    cursor: not-allowed;
+    padding: 0.7rem 0.2rem;
+    font-size: 1.2rem;
 }

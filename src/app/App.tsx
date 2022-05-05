@@ -5,9 +5,13 @@ import Login from "../pages/login";
 import Register from "../pages/register";
 import ProductDetail from "../pages/product-detail";
 import DashboardPage from "../pages/dashboard";
+import Profile from "../pages/profile";
 import "./app.css";
 import Shipping from "../pages/shipping";
 import Payment from "../pages/payment";
+import MyTransactions from "../pages/my-transactions";
+import BankAccounts from "../pages/bank-accounts";
+import BankAccountsDetail from "../pages/bank-accounts-detail";
 import Header from "../main/components/Header";
 import Cart from "../pages/cart";
 const App = () => {
@@ -47,6 +51,14 @@ const App = () => {
           }
         />
         <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
           path="/shipping"
           element={
             <PrivateRoute>
@@ -59,6 +71,30 @@ const App = () => {
           element={
             <PrivateRoute>
               <Payment />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/my-transactions"
+          element={
+            <PrivateRoute>
+              <MyTransactions />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/bank-accounts"
+          element={
+            <PrivateRoute>
+              <BankAccounts />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/bank-accounts/:id"
+          element={
+            <PrivateRoute>
+              <BankAccountsDetail />
             </PrivateRoute>
           }
         />

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import IProduct from "../../main/interfaces/IProduct";
 import {
   addProduct,
@@ -37,6 +38,9 @@ const ProductDetail = () => {
   if (product === null) return <h3>Loading...</h3>;
   return (
     <main className="default-main">
+      <button className="go-back-btn" onClick={() => navigate(-1)}>
+        <ArrowBackIcon sx={{ fill: "#ffff", fontSize: "2rem" }} />
+      </button>
       <div className="default-container product-detail-container">
         <div className="product-image">
           <img

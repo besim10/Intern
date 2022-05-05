@@ -1,6 +1,7 @@
 import "./style.css";
 import bagIcon from "../../assets/images/bag.svg";
 import { useNavigate } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useDispatch } from "react-redux";
 import IShippingAddress from "../../main/interfaces/IShippingAddress";
 
@@ -23,8 +24,11 @@ const Shipping = () => {
     };
   };
   return (
-    <main className="main-wrapper shipping-wrapper">
-      <div className="main-container shipping-main">
+    <main className="default-main shipping-wrapper">
+      <button className="go-back-btn" onClick={() => navigate(-1)}>
+        <ArrowBackIcon sx={{ fill: "#ffff", fontSize: "2rem" }} />
+      </button>
+      <div className="default-container shipping-main">
         <h3>Secure Checkout</h3>
         <h4>Shipping Address</h4>
         <form onSubmit={handleSubmit} className="shipping-form">

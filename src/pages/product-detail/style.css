@@ -59,3 +59,12 @@
     padding: 1rem 0rem;
     line-height: 1.9;
 }
+.go-back-btn{
+    display: grid;
+    place-self: start;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.2rem 0.6rem;
+}
