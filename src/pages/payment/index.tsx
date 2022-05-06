@@ -10,13 +10,19 @@ import { RootState } from "../../main/store/redux/rootState";
 import IBankAccount from "../../main/interfaces/IBankAccount";
 import axios from "axios";
 import { invalidateCart } from "../../main/store/stores/cart/cart.store";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 const Payment = () => {
-  const [selectedOption, setSelectedOption] = useState("Pro Credit Bank");
+  const [selectedOption, setSelectedOption] = useState("");
   const [error, setError] = useState({ value: false, amount: 0 });
   const [successPayment, setSuccesPayment] = useState(false);
   const [seconds, setSeconds] = useState(6);
   const [bankAccounts, setBankAccounts] = useState<IBankAccount[]>([]);
+
   const cart = useSelector((state: RootState) => state.cart);
+  const shippingAddress = useSelector(
+    (state: RootState) => state.shippingAddress
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const notify = () => toast.success("Order Succesfully Placed");
@@ -37,13 +43,19 @@ const Payment = () => {
     const bankAccount = bankAccounts.find(
       (bank) => bank.name === selectedOption
     );
-    if (bankAccounts.length === 0) return;
 
-    if (bankAccount.balance < cart.totalValue) {
-      setError({ value: true, amount: cart.totalValue - bankAccount.balance });
-    } else {
-      setError({ value: false, amount: 0 });
+    // if (bankAccounts.length === 0) return;
+    if (bankAccount) {
+      if (bankAccount.balance < cart.totalValue) {
+        setError({
+          value: true,
+          amount: cart.totalValue - bankAccount.balance,
+        });
+      } else {
+        setError({ value: false, amount: 0 });
+      }
     }
+
     return () => {};
   }, [bankAccounts, selectedOption]);
   useEffect(() => {
@@ -68,7 +80,6 @@ const Payment = () => {
   };
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("hi");
     const bankAccount = bankAccounts.find(
       (bank) => bank.name === selectedOption
     );
@@ -92,7 +103,18 @@ const Payment = () => {
     setSelectedOption(e.target.value);
   };
 
-  if (bankAccounts.length === 0) return <h3>Loading...</h3>;
+  if (bankAccounts.length === 0)
+    return (
+      <Box
+        sx={{
+          display: "grid",
+          placeContent: "center",
+          height: "80vh",
+        }}
+      >
+        <CircularProgress size={"4rem"} />
+      </Box>
+    );
   return (
     <main
       className={`default-main ${
@@ -113,7 +135,22 @@ const Payment = () => {
             <div className="shipping-section">
               <div className="shipping-address">
                 <h4>Shipping Address</h4>
-                <p>Besim Sokoli</p>
+                <h5>
+                  {shippingAddress.firstName} {shippingAddress.lastName}
+                </h5>
+                <h5>{shippingAddress.address}</h5>
+                <h5>
+                  {shippingAddress.city}, {shippingAddress.state}{" "}
+                  {shippingAddress.postalCode} {shippingAddress.country}
+                </h5>
+                <span
+                  onClick={() => {
+                    navigate(-1);
+                  }}
+                  className="edit-button"
+                >
+                  EDIT
+                </span>
               </div>
               <div className="shipping-days">
                 <h4>Shipping </h4>

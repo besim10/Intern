@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import IProduct from "../../main/interfaces/IProduct";
 import {
   addProduct,
@@ -35,7 +37,18 @@ const ProductDetail = () => {
     navigate("/cart");
   };
 
-  if (product === null) return <h3>Loading...</h3>;
+  if (product === null)
+    return (
+      <Box
+        sx={{
+          display: "grid",
+          placeContent: "center",
+          height: "80vh",
+        }}
+      >
+        <CircularProgress size={"4rem"} />
+      </Box>
+    );
   return (
     <main className="default-main">
       <button className="go-back-btn" onClick={() => navigate(-1)}>

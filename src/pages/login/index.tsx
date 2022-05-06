@@ -15,7 +15,11 @@ const Login: FC = () => {
       userName,
       password,
     };
-    dispatch(onLogin(data));
+    try {
+      dispatch(onLogin(data));
+    } catch (err) {
+      alert(err);
+    }
   };
 
   const handleClick = () => {

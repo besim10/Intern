@@ -4,7 +4,12 @@ img{
 }
 .product-list {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     list-style-type: none;
     gap: 1rem;
+    place-items: center;
+}
+.search-found-info{
+    color: #9D5C63;
+    font-weight: bold;
 }

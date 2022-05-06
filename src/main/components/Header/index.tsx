@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import useGetUser from "../../hooks/useGetUser";
+import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import onLogout from "../../store/stores/user/login.store.on-logout";
 import "./style.css";
@@ -7,6 +8,7 @@ import logo from "../../../assets/images/logo.svg";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../../store/redux/rootState";
 import AccountMenu from "../ProfileIcon/index";
+import { setSearch } from "../../store/stores/search/search.store";
 const Header = () => {
   const currentUser = useGetUser();
 
@@ -18,9 +20,9 @@ const Header = () => {
 
   const user = useGetUser();
 
-  const handleClick = () => {
-    dispatch(onLogout());
-  };
+  // const handleClick = () => {
+  //   dispatch(onLogout());
+  // };
 
   const handleCartButton = () => {
     navigate("/cart", { replace: true });
@@ -38,6 +40,20 @@ const Header = () => {
             src={logo}
             alt="official-logo"
             className="official-logo"
+          />
+        </div>
+        <div className="search">
+          <input
+            onChange={(e) => {
+              dispatch(setSearch(e.target.value));
+            }}
+            type="search"
+            name="search"
+            placeholder="Search"
+          />
+          <SearchIcon
+            className="search-icon"
+            sx={{ fontSize: "1.6rem", height: "100%", color: "#b5b5b5" }}
           />
         </div>
         <div className="right-side">

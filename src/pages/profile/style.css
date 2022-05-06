@@ -1,10 +1,13 @@
 .default-main.profile-main{
     display: grid;
-    place-content: center;
     height: 86.8vh;
+    place-content: unset;
+    align-content: start;
 }
 .default-container.profile-container{
     background-color: unset;
+    display: grid;
+    place-self: center;
 }
 .profile-list-choice{
     display: grid;

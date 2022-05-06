@@ -36,7 +36,18 @@
 .shipping-section p{
     width: 20ch;
 }
-.shipping-address, .shipping-days{
+
+.shipping-address{
+    display: grid;
+    align-content: start;
+    gap: 0.2rem;
+}
+.edit-button{
+    color: #778fb3;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+.shipping-days{
     display: grid;
     gap: 1rem;
 }

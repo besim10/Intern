@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Table from "../../main/components/Table";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import "./style.css";
 import IBankAccount from "../../main/interfaces/IBankAccount";
 import ITransaction from "../../main/interfaces/ITransaction";
 
@@ -49,7 +50,7 @@ const BankAccountsDetail = () => {
   if (transactions === undefined) return <h1>Loading...</h1>;
   if (bankAccount === null) return <h1>Loading...</h1>;
   return (
-    <main className="default-main">
+    <main className="default-main transaction-main">
       <button className="go-back-btn" onClick={() => navigate(-1)}>
         <ArrowBackIcon sx={{ fill: "#ffff", fontSize: "2rem" }} />
       </button>

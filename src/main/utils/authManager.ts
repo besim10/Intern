@@ -27,8 +27,10 @@ class AuthManager {
   }
 
   static async getTokenWithCredentials(payload: ILoginRequest): Promise<IUserInfo> {
-
+    
+    try{
     const { data }  = await axios.post('authentication/login',payload);
+ 
     const user  = await AuthManager.getUserFromToken(data.token);
     
     const responseLogin: IUserInfo = {
@@ -41,6 +43,9 @@ class AuthManager {
     }
 
     return responseLogin;
+  }catch(err){
+    throw("Test")
+  }
   }
 
   static async loginWithCredentials(credentials: ILoginRequest): Promise<IUserInfo> {

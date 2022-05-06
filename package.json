@@ -12,11 +12,13 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
+    "classnames": "^2.3.1",
     "dotenv": "^16.0.0",
     "encrypt-storage": "^2.2.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.20.2",
+    "react-pagination": "^1.0.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
@@ -50,5 +52,9 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "sass": "^1.51.0"
   }
 }

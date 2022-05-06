@@ -13,12 +13,14 @@ import MyTransactions from "../pages/my-transactions";
 import BankAccounts from "../pages/bank-accounts";
 import BankAccountsDetail from "../pages/bank-accounts-detail";
 import Header from "../main/components/Header";
+import SignUpSave from "../main/components/SignUpSave";
 import Cart from "../pages/cart";
 const App = () => {
   return (
     <BrowserRouter>
       <AppNavigate />
       <Header />
+      <SignUpSave />
       <Routes>
         <Route index element={<Navigate to="/login" />} />
         <Route

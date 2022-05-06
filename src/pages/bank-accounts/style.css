@@ -1,12 +1,15 @@
 .bankAccounts-wrapper{
     display: grid;
-    align-content: start;
     padding: 1rem;
     height: 86.5vh;
+    place-content: unset;
+    align-content: start;
 }
 .bankAccounts-main{
     background-color: #D6E3F8;
-    width: unset;
+    display: grid;
+    width: max-content;
+    place-self: center;
 }
 .bankAccount-list__item a{
     display: grid;
@@ -23,4 +26,8 @@
 }  
 .balance{
     padding: unset;
+}
+.go-back-btn{
+    display: grid;
+    place-self: start;
 }
