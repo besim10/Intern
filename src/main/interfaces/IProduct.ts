@@ -9,7 +9,7 @@ interface IProduct {
   categoryId: number;
   price: number;
   base64Image: string;
-  category?: ICategory
+  category: ICategory
 }
 
 export default IProduct;

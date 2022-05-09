@@ -1,0 +1,23 @@
+.categories-list{
+    display: grid;
+    grid-auto-flow: column;
+    list-style-type: none;
+    background-color: #D6E3F8;
+}
+.categories-list a{
+    text-decoration: none;
+}
+.categories-list__item{
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: bold;
+    color:#9d5c63;
+    text-decoration: none;
+
+}
+.categories-list__item:hover{
+    background-color: #a5c2f561;
+}
+.active{
+    background-color: #a5c2f5ca;
+}

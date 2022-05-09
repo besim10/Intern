@@ -15,7 +15,7 @@ const initApp = async () => {
   } catch (e) {
     console.log('JwtManager.accessToken')
   }
-
+  
   const appStore = initStore(currentUser);
 
   return appStore;

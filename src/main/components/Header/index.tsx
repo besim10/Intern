@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import useGetUser from "../../hooks/useGetUser";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import onLogout from "../../store/stores/user/login.store.on-logout";
 import "./style.css";
 import logo from "../../../assets/images/logo.svg";
 import { useNavigate } from "react-router-dom";

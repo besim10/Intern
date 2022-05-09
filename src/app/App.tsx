@@ -15,12 +15,17 @@ import BankAccountsDetail from "../pages/bank-accounts-detail";
 import Header from "../main/components/Header";
 import SignUpSave from "../main/components/SignUpSave";
 import Cart from "../pages/cart";
+import Categories from "../main/components/Categories";
+import AllProducts from "../pages/all-products";
+import CategoryDetail from "../pages/category-detail";
+
 const App = () => {
   return (
     <BrowserRouter>
       <AppNavigate />
       <Header />
       <SignUpSave />
+      <Categories />
       <Routes>
         <Route index element={<Navigate to="/login" />} />
         <Route
@@ -97,6 +102,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <BankAccountsDetail />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/Category/:name"
+          element={
+            <PrivateRoute>
+              <CategoryDetail />
             </PrivateRoute>
           }
         />

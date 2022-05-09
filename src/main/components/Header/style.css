@@ -1,3 +1,4 @@
+
 header{
     background-color: #D6E3F8;
     display: grid;
@@ -8,7 +9,9 @@ header{
     place-content: space-between;
     align-items: center;
 }
-
+.official-logo{
+    min-width: 200px;
+}
 .search {
     border: 1px solid #b5b5b5;
     display: grid;
